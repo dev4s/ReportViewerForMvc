@@ -100,7 +100,7 @@ namespace ReportViewerForMvc
                     throw new ArgumentException("An attempt was made to set the property '" + propertyInfo.Name + "' that is not found on object type '" + typeof(T).Name + "'");
                 }
 
-                property.SetValue(instance, propertyInfo.GetValue(obj));
+                property.SetValue(instance, propertyInfo.GetValue(obj, null), null);
             }
 
             return instance;
@@ -112,7 +112,7 @@ namespace ReportViewerForMvc
 
             foreach (PropertyInfo propertyInfo in obj.GetType().GetProperties())
             {
-                dic.Add(propertyInfo.Name, propertyInfo.GetValue(obj).ToString());
+                dic.Add(propertyInfo.Name, propertyInfo.GetValue(obj, null).ToString());
             }
 
             return dic;

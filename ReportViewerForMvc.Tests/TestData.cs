@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Drawing;
 using Microsoft.Reporting.WebForms;
 using System.Web.UI.WebControls;
-using System.Data;
-using ReportViewerForMvc.Tests.Reports;
 using System.IO;
 using System.Reflection;
 

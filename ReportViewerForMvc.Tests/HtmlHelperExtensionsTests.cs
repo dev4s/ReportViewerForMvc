@@ -196,7 +196,7 @@ namespace ReportViewerForMvc.Tests
         {
             foreach (var property in TestData.HtmlAttributes.GetType().GetProperties())
             {
-                var propertyValue = property.GetValue(TestData.HtmlAttributes);
+                var propertyValue = property.GetValue(TestData.HtmlAttributes, null);
                 Assert.AreEqual(propertyValue, iframeResult.GetAttributeValue(property.Name, null));
             }
         }

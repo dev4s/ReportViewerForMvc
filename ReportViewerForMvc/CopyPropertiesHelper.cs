@@ -27,12 +27,12 @@ namespace ReportViewerForMvc
                 {
                     if (propertyInfo.CanRead)
                     {
-                        var valueToCopy = propertyInfo.GetValue(properties);
+                        var valueToCopy = propertyInfo.GetValue(properties, null);
                         var objProperty = objType.GetProperty(propertyInfo.Name);
 
                         if (objProperty.CanWrite)
                         {
-                            objProperty.SetValue(obj, valueToCopy);
+                            objProperty.SetValue(obj, valueToCopy, null);
                         }
                     }
                 }

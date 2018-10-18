@@ -1,5 +1,9 @@
 # ReportViewer for MVC
 
+```
+This packages is just changes for ASP.NET MVC 4. This project currently doesn't have relation to ASP.NET MVC 5. All of the tests which are in this project are green. So that's enough for me.
+```
+
 ReportViewer for MVC is a simple library that makes it possible to use an ASP.NET ReportViewer control in an ASP.NET MVC application.
 
 It provides a set of HTML Helpers and all of it's dependencies for displaying a report. Local or server, it handles all.
@@ -51,4 +55,4 @@ View:
 
 ## More info
 
-Check the [Wiki](https://github.com/armanio123/ReportViewerForMvc/wiki) for the project.
+Check the [Wiki](https://github.com/armanio123/ReportViewerForMvc/wiki)(original author) for the project.

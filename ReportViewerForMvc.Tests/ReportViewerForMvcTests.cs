@@ -124,8 +124,8 @@ namespace ReportViewerForMvc.Tests
         {
             foreach (PropertyInfo propertyInfo in expected.GetType().GetProperties())
             {
-                var expectedValue = expected.GetType().GetProperty(propertyInfo.Name).GetValue(expected);
-                var actualValue = actual.GetType().GetProperty(propertyInfo.Name).GetValue(actual);
+                var expectedValue = expected.GetType().GetProperty(propertyInfo.Name).GetValue(expected, null);
+                var actualValue = actual.GetType().GetProperty(propertyInfo.Name).GetValue(actual, null);
 
                 Assert.AreEqual(expectedValue, actualValue);
             }
@@ -145,7 +145,7 @@ namespace ReportViewerForMvc.Tests
 
                     Assert.AreEqual(expectedPropertyInfo.Name, actualReportParameterInfo.Name);
 
-                    string expectedValue = expectedPropertyInfo.GetValue(expected).ToString();
+                    string expectedValue = expectedPropertyInfo.GetValue(expected, null).ToString();
                     if (String.IsNullOrEmpty(expectedValue))
                     {
                         Assert.IsTrue(actualReportParameterInfo.Values.Count == 0);
@@ -169,7 +169,7 @@ namespace ReportViewerForMvc.Tests
                     bool isDataSourceFound = false;
                     foreach (var expectedReportDataSource in (IEnumerable)expected)
                     {
-                        if (expectedReportDataSource.GetType().GetProperty("Name").GetValue(expectedReportDataSource).ToString() == actualReportDataSource.Name)
+                        if (expectedReportDataSource.GetType().GetProperty("Name").GetValue(expectedReportDataSource, null).ToString() == actualReportDataSource.Name)
                         {
                             isDataSourceFound = true;
                             TestObjects(expectedReportDataSource, actualReportDataSource);
